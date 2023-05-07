@@ -27,7 +27,7 @@ namespace WinFormsApp1
             if(hasStoredOperation)
             {
                 TextLabel.Text = " ";
-                //hasStoredResult = false;
+
                 hasStoredOperation = false;
             }
 
