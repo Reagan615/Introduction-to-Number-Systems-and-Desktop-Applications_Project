@@ -165,7 +165,23 @@ namespace WinFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
 
+            ChangeFocus();
+        }
+
+        private void ChangeFocus()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.TabStop = false;
+            }
+
+            this.TabStop = true;
+
+            this.ActiveControl = null;
+
+            this.Focus();
         }
 
         private void TextLabel_Click(object sender, EventArgs e)
@@ -231,6 +247,76 @@ namespace WinFormsApp1
             
 
             TextLabel.Text = result;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+
+            {
+                button11.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+                LableChangedButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+                button1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+                button2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+                button5.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+            {
+                button4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+            {
+                button3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+            {
+                button8.PerformClick();
+
+            }
+            else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
+            {
+                button7.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+            {
+                button6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Decimal || e.KeyCode == Keys.OemPeriod)
+            {
+                PointButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Add || e.KeyCode == Keys.Oemplus)
+            {
+                button9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract || e.KeyCode == Keys.OemMinus)
+            {
+                MinusButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply)
+            {
+                TimeButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                DividButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                equalButton.PerformClick();
+            }
         }
     }
 }
